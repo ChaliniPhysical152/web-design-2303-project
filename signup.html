@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - SweetSlice</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('image/signup.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px;">
+            <h3 class="text-center mb-4">Signup</h3>
+            <form id="signupForm">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter your full name" required>
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Create a password" required>
+                </div>
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <!-- Signup Button -->
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+            <div class="text-center mt-3">
+                <p class="small">
+                    Already have an account? <a href="login.html">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to validate signup form
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // Validate password length (minimum 6 characters)
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // Show success message
+            alert(`Signup successful! Welcome, ${name}!`);
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    </script>
+</body>
+</html>

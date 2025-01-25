@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SweetSlice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #FFC0CB, #FF69B4);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            background-color: rgba(213, 0, 109, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        #logo img {
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FFC0CB;
+        }
+
+        .icons img {
+            height: 30px;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .icons img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 60px 0;
+        }
+
+        #contact h1 {
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #contact form {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 16px;
+        }
+
+        #contact textarea {
+            resize: vertical;
+        }
+
+        #contact button {
+            background-color: #D5006D;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #FF69B4;
+        }
+
+        /* Slider Styles */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(213, 0, 109, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background-color: #FF69B4;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Bottom Banner Styles */
+        .bottom-banner {
+            background-image: url('image/background2.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .bottom-banner h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-banner p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .bottom-banner button {
+            background-color: #D5006D;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bottom-banner button:hover {
+            background-color: #FF69B4;
+        }
+
+        /* Footer Styles */
+        #footer {
+            background-color: rgba(213, 0, 109, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 0;
+            margin-top: 60px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #footer h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #footer p {
+            font-size: 18px;
+        }
+
+        #footer .icons {
+            margin-top: 20px;
+        }
+
+        #footer .icons i {
+            background-color: white;
+            color: #D5006D;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #footer .icons i:hover {
+            background-color: #FF69B4;
+            color: white;
+        }
+
+        .copyright {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Scroll to Top Button */
+        .arrow {
+            position: fixed;
+            background-color: #D5006D;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            bottom: 40px;
+            right: 50px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 20px;
+            transition: 0.3s ease;
+        }
+
+        .arrow:hover {
+            background-color: #FF69B4;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="container">
+        <a href="#" id="logo">
+            <img src="image/logo.jpg" alt="Logo"> SweetSlice
+        </a>
+        <ul class="navbar-nav">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <img src="cart.png" alt="Cart">
+            <img src="image/user.png" alt="User">
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <div id="messagebtn" style="text-align: center;">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Slider Section -->
+<div class="slider">
+    <div class="slides">
+        <div class="slide">
+            <img src="image/contact1.jpg" alt="Banner 1">
+        </div>
+        <div class="slide">
+            <img src="image/contact2.jpeg" alt="Banner 2">
+        </div>
+        <div class="slide">
+            <img src="image/contact3.jpg" alt="Banner 3">
+        </div>
+    </div>
+    <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<!-- Bottom Banner Section -->
+<div class="bottom-banner">
+    <div class="container">
+        <h2>Celebrate with Disney Magic!</h2>
+        <p>Order your dream cake today and make your celebration unforgettable.</p>
+        
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <h1>SweetSlice</h1>
+        <p>Bringing magic to your celebrations since 2023.</p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <p class="copyright">&copy; 2023 SweetSlice. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<a href="#" class="arrow">↑</a>
+
+<script>
+    // Slider Functionality
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function showSlide(index) {
+        if (index >= totalSlides) slideIndex = 0;
+        if (index < 0) slideIndex = totalSlides - 1;
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>
+</body>
+</html>
