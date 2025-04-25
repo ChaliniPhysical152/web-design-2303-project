@@ -1,0 +1,979 @@
+/* --- General Styles & Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif, Arial, sans-serif; /* Added fallback fonts */
+    background: linear-gradient(135deg, #fff0f5, #ffefd5); /* Lighter, elegant gradient */
+    color: #333; /* Darker text for better readability */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Consistent heading font */
+    color: #D5006D; /* Primary pink color for headings */
+    font-weight: 600; /* Slightly bolder */
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555; /* Slightly lighter text color */
+}
+
+a {
+    color: #D5006D;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FF69B4; /* Lighter pink on hover */
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Ensure fluid images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px; /* Reduced top margin */
+    margin-bottom: 40px; /* Added bottom margin */
+    color: #D5006D; /* Use primary color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 2.2rem; /* Adjusted size */
+}
+
+.section-title::after { /* Simple underline effect */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #FF69B4; /* Lighter pink */
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.page-main-title { /* For About, Contact, Gallery Pages */
+     text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #D5006D;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 2.8rem;
+}
+
+
+.card {
+    border: none; /* Remove default card border */
+    border-radius: 10px; /* Consistent rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    overflow: hidden; /* Ensure content respects border-radius */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: #D5006D;
+    border-color: #D5006D;
+    font-weight: bold;
+    padding: 10px 25px; /* More padding */
+    border-radius: 50px; /* Pill shape */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: #FF69B4;
+    border-color: #FF69B4;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+     color: #D5006D;
+     border-color: #D5006D;
+     font-weight: bold;
+     border-radius: 50px;
+     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #D5006D;
+    color: white;
+}
+
+.btn-secondary { /* For overlay buttons, etc. */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    border-radius: 50%; /* Circle */
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0; /* Remove default padding */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(213, 0, 109, 0.8); /* Primary color semi-transparent */
+    color: white;
+    transform: scale(1.1);
+}
+.btn-secondary i { font-size: 1rem; line-height: 1; } /* Adjust icon size and ensure centered */
+.btn-secondary img { max-width: 60%; height: auto; } /* Size overlay icons */
+
+
+/* --- Navbar Styles --- */
+.sweet-navbar {
+    background-color: rgba(213, 0, 109, 0.9); /* Slightly more opaque */
+    backdrop-filter: blur(8px);
+    padding: 10px 0; /* Adjusted padding */
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Ensure it's above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 500; /* Normal weight */
+}
+
+.sweet-navbar .navbar-brand {
+    font-size: 1.8rem; /* Larger logo text */
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.sweet-navbar .logo-img {
+    height: 45px; /* Slightly larger logo */
+    width: auto;
+    margin-right: 12px;
+    border-radius: 50%; /* Make logo image circular */
+    vertical-align: middle;
+}
+
+.sweet-navbar .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    margin: 0 15px; /* Spacing between links */
+    font-weight: 500; /* Normal weight */
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 8px 0; /* Vertical padding */
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.sweet-navbar .navbar-nav .nav-link::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFC0CB; /* Light pink */
+    transition: width 0.3s ease;
+}
+
+.sweet-navbar .navbar-nav .nav-item.active .nav-link,
+.sweet-navbar .navbar-nav .nav-link:hover {
+    color: white; /* Full white on hover/active */
+}
+
+.sweet-navbar .navbar-nav .nav-item.active .nav-link::after,
+.sweet-navbar .navbar-nav .nav-link:hover::after {
+    width: 100%; /* Expand underline */
+}
+
+.sweet-navbar .navbar-toggler {
+    border: none;
+    padding: 0; /* Remove padding */
+}
+.sweet-navbar .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+.sweet-navbar .navbar-toggler-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+.sweet-navbar .navbar-toggler-icon img { /* Style for image toggler */
+     width: 30px;
+     height: auto;
+     filter: brightness(0) invert(1); /* Make it white */
+}
+
+
+.sweet-navbar .navbar-icons img {
+    height: 28px; /* Adjust icon size */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Make icons white */
+    vertical-align: middle; /* Align icons nicely */
+}
+
+.sweet-navbar .navbar-icons img:hover {
+    transform: scale(1.15);
+}
+
+.sweet-navbar .dropdown-menu {
+    background-color: rgba(213, 0, 109, 0.95);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.sweet-navbar .dropdown-item {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sweet-navbar .dropdown-item:hover,
+.sweet-navbar .dropdown-item:focus {
+    background-color: #FF69B4;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .sweet-navbar .navbar-nav {
+        margin-top: 15px;
+        text-align: center; /* Center links in collapsed menu */
+    }
+     .sweet-navbar .navbar-nav .nav-link {
+         margin: 10px 0; /* Vertical spacing */
+     }
+     .sweet-navbar .navbar-icons {
+         margin-left: 0; /* Reset margin */
+         margin-top: 10px;
+         display: flex;
+         justify-content: center; /* Center icons */
+         padding-bottom: 10px;
+     }
+      .sweet-navbar .navbar-icons img {
+          margin: 0 10px; /* Reduced spacing between icons */
+      }
+}
+
+/* --- Home Section --- */
+.home-section {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
+}
+
+.home-background {
+    padding: 120px 0; /* Adjust vertical padding */
+    min-height: 80vh; /* Minimum height */
+    display: flex;
+    align-items: center;
+    /* Image path relative to CSS file (in css/) -> ../images/ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/background2.webp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.home-content h3 {
+    font-size: 2.5rem; /* Responsive font size */
+    font-weight: 300; /* Lighter weight for 'Hi' part */
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.home-content h2 {
+    font-size: 3.5rem; /* Larger font size */
+    font-weight: bold;
+    color: #fff; /* White text */
+    margin-bottom: 1.5rem;
+}
+
+.home-content .changecontent { /* Style the changing part */
+    color: #FFC0CB; /* Light pink for emphasis */
+    font-weight: bold;
+}
+/* Keyframes for text change (JS will handle the logic) */
+@keyframes changetext {
+    0%, 100% { content: "Birthday cake"; }
+    20% { content: "Chocolate cake"; }
+    40% { content: "Party cake"; }
+    60% { content: "Slice cake"; }
+    80% { content: "Cup cake"; }
+}
+.changecontent::after {
+    content: 'Birthday cake'; /* Default */
+    animation: changetext 10s infinite linear;
+}
+
+.home-image img {
+    max-width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite; /* Subtle floating animation */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.btn-order-now {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .home-background {
+        padding: 80px 0;
+        min-height: 60vh;
+        text-align: center;
+        background-attachment: scroll; /* Disable parallax on mobile */
+    }
+    .home-content h3 {
+        font-size: 2rem;
+    }
+    .home-content h2 {
+        font-size: 2.8rem;
+    }
+     .home-image {
+         margin-top: 30px;
+     }
+}
+
+/* --- Top Cards --- */
+.top-cards-section .card {
+    border: none;
+    overflow: hidden; /* Ensure image fits card radius */
+}
+.top-cards-section .card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Banner Section --- */
+.banner-section {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+.banner-background {
+    padding: 100px 0;
+    /* Image path relative to CSS file (in css/) -> ../images/ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Optional parallax */
+}
+.banner-content h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee; /* Slightly off-white */
+}
+.banner-content h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.btn-order-banner {
+     margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .banner-background {
+        padding: 60px 0;
+        text-align: center;
+         background-attachment: scroll;
+    }
+     .banner-content h2 {
+        font-size: 2.5rem;
+    }
+    .banner-image { display: none; } /* Hide image column on small screens if needed */
+}
+
+
+/* --- Product Card Styles --- */
+.product-section {
+    background-color: #fdfbfb; /* Very light background */
+}
+.product-section.bg-light { /* For Birthday cakes section */
+     background-color: #fff0f5; /* Lavender blush */
+}
+
+.product-card {
+    position: relative; /* Needed for overlay */
+    text-align: center;
+}
+
+.product-card .product-image {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: contain; /* Fit image within bounds */
+    padding: 15px; /* Padding around image */
+    background-color: #fff; /* White background for image area */
+}
+
+.product-card .card-body {
+    padding: 15px;
+}
+
+.product-card .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    min-height: 40px; /* Prevent layout shifts */
+}
+
+.product-card .star-rating {
+    margin-bottom: 10px;
+    color: #f8d64e; /* Gold color for stars */
+}
+.star-rating .bx { /* Boxicons star */
+    font-size: 1rem;
+    margin: 0 1px;
+}
+.star-rating .checked {
+    color: #f8d64e;
+}
+.star-rating .bxs-star:not(.checked) { /* Style for empty stars */
+     color: #ddd;
+}
+
+
+.product-card .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D5006D; /* Primary pink */
+    margin-bottom: 10px;
+}
+
+.product-card .product-price span {
+    margin-left: 15px;
+}
+
+.btn-add-cart-alt {
+    font-size: 0.8rem;
+    padding: 5px 15px;
+}
+
+/* Product Overlay */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-overlay .btn-secondary {
+    margin: 8px 0; /* Vertical spacing */
+}
+
+
+/* --- Gallery Styles --- */
+.gallery-page-section {
+    background-color: #fffaf0; /* Floral white background */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Gap between items */
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden; /* Ensure overlay stays within bounds */
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: 250px; /* Fixed height for gallery images */
+    object-fit: cover; /* Cover the area */
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-image {
+    transform: scale(1.08); /* Zoom effect on hover */
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); /* Gradient background */
+    color: white;
+    padding: 20px 15px;
+    opacity: 0;
+    transform: translateY(100%); /* Start hidden below */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    text-align: center;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0); /* Slide in from bottom */
+}
+
+.gallery-overlay h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* --- About Page Styles --- */
+.about-page-section {
+    background-color: #f8f8ff; /* Ghost white background */
+}
+
+.about-card-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+.about-card-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
+.about-card-content strong {
+    color: #D5006D;
+}
+
+/* --- Slider Styles (Generic for About, Contact, Gallery) --- */
+.slider-section {
+    background-color: #fff; /* White background for slider section */
+    padding: 40px 0; /* Padding around slider */
+}
+.carousel {
+    border-radius: 10px;
+    overflow: hidden; /* Ensure images respect radius */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.carousel-inner img {
+    max-height: 500px; /* Limit slider image height */
+    object-fit: cover; /* Cover the area */
+    width: 100%; /* Ensure full width */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker control background */
+    border-radius: 50%;
+    padding: 15px; /* Make controls larger */
+    background-size: 50% 50%; /* Adjust icon size */
+}
+.carousel-control-prev, .carousel-control-next {
+     width: 5%; /* Adjust width */
+}
+
+
+/* --- Bottom Banner --- */
+.bottom-banner-section {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+.bottom-banner-background {
+    padding: 80px 0;
+    /* Image path relative to CSS file (in css/) -> ../images/ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background2.webp'); /* Re-use home background */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Optional parallax */
+}
+.bottom-banner-section h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+.bottom-banner-section p {
+    font-size: 1.2rem;
+    color: #eee;
+    margin-bottom: 1.5rem;
+}
+.bottom-banner-section .btn-light { /* Style the light button */
+    font-weight: bold;
+    color: #D5006D;
+    padding: 12px 30px;
+    border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+    .bottom-banner-background {
+        padding: 50px 0;
+        text-align: center;
+        background-attachment: scroll;
+    }
+    .bottom-banner-section h2 {
+        font-size: 2rem;
+    }
+     .bottom-banner-section p {
+        font-size: 1rem;
+    }
+}
+
+
+/* --- Contact Page Styles --- */
+.contact-page-section {
+    background-color: #fffaf0; /* Floral white */
+}
+.contact-form-container {
+     background-color: white;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+     max-width: 800px; /* Limit form width */
+     margin: auto; /* Center form */
+}
+.contact-form label {
+    font-weight: bold;
+    color: #555;
+}
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 12px; /* More padding */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form .form-control:focus {
+    border-color: #FF69B4;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25); /* Pink focus */
+}
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+.contact-form button[type="submit"] {
+     padding: 12px 40px; /* Larger button */
+}
+.contact-info {
+    background-color: #f8f8ff; /* Light background for info */
+    padding: 20px;
+    border-radius: 10px;
+}
+.contact-info h4 {
+    color: #D5006D;
+    margin-bottom: 15px;
+}
+.contact-info p {
+    color: #555;
+    margin-bottom: 8px;
+}
+.contact-info i {
+    margin-right: 10px;
+    color: #D5006D;
+    width: 20px; /* Align icons */
+    text-align: center;
+}
+
+
+/* --- Footer Styles --- */
+.sweet-footer {
+    background-color: rgba(213, 0, 109, 0.9); /* Same as navbar */
+    backdrop-filter: blur(8px);
+    padding: 40px 0 20px;
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    margin-top: 60px; /* Space above footer */
+}
+
+.sweet-footer h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sweet-footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.sweet-footer .social-icons {
+    margin: 25px 0;
+}
+
+.sweet-footer .social-icons a {
+    color: #D5006D;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex; /* Use flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.sweet-footer .social-icons a:hover {
+    background-color: #FF69B4;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.sweet-footer .copyright {
+    font-size: 0.85rem;
+    margin-top: 20px;
+     color: rgba(255, 255, 255, 0.7);
+}
+
+.sweet-footer .credits {
+    font-size: 0.8rem;
+     color: rgba(255, 255, 255, 0.7);
+}
+.sweet-footer .credits a {
+    color: white;
+    font-weight: bold;
+}
+.sweet-footer .credits a:hover {
+    color: #FFC0CB;
+}
+
+
+/* --- Scroll to Top Button --- */
+.scroll-to-top-arrow {
+    position: fixed;
+    background-color: #D5006D;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    bottom: 30px;
+    right: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    display: flex; /* Center image */
+    align-items: center;
+    justify-content: center;
+    padding: 5px; /* Padding around image */
+}
+.scroll-to-top-arrow img {
+    max-width: 60%; /* Control image size */
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Make image white */
+}
+
+.scroll-to-top-arrow.visible {
+     opacity: 1;
+     visibility: visible;
+}
+
+.scroll-to-top-arrow:hover {
+    background-color: #FF69B4;
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+/* --- Login/Signup Page Specific Styles --- */
+.auth-card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 420px; /* Slightly wider */
+}
+.auth-card label {
+    font-weight: bold;
+    color: #555;
+}
+.auth-card .form-control {
+     border-radius: 0.5rem;
+     padding: 12px;
+}
+.auth-card .btn-primary {
+    padding: 12px; /* Standard padding */
+    font-size: 1rem;
+}
+.auth-card .small a {
+    font-weight: bold;
+}
+
+
+/* --- Cart Page Styles --- */
+.cart-page-container {
+     background-color: #fff;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+.cart-header {
+    color: #D5006D;
+    font-weight: bold;
+}
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    align-items: center; /* Vertically align items */
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+.cart-item-image {
+    max-width: 80px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain; /* Ensure full image is visible */
+}
+.cart-item-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+}
+.cart-item-price {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+.quantity-group .form-control {
+    max-width: 60px; /* Limit width */
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 0.5rem; /* Adjust padding if needed */
+    padding-right: 0.5rem;
+}
+.quantity-group .btn {
+     border-radius: 0;
+     padding: 0.375rem 0.6rem; /* Adjust padding */
+     line-height: 1.5; /* Ensure proper button height */
+}
+.quantity-group .btn:first-child {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.quantity-group .btn:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+.cart-item-subtotal p {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+.remove-item-btn {
+     padding: 5px 10px;
+     font-size: 0.8rem;
+}
+.total-section h4 {
+    color: #D5006D;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+#checkout-button:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+/* --- Utility Classes --- */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+.py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.my-5 { margin-top: 3rem !important; margin-bottom: 3rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-left { text-align: left !important; }
+.d-none { display: none !important; }
+/* Add more Bootstrap utility classes if needed */
+
+/* Ensure form validation feedback is visible */
+.needs-validation .invalid-feedback {
+    display: none; /* Hide by default */
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em; /* Adjust size */
+    color: #dc3545; /* Bootstrap's danger color */
+}
+
+/* Style invalid fields */
+.needs-validation .form-control:invalid,
+.needs-validation .was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+.needs-validation .form-control:invalid:focus,
+.needs-validation .was-validated .form-control:invalid:focus {
+  box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25);
+}
+
+/* Show feedback message only when invalid AND after validation attempt */
+.needs-validation.was-validated .form-control:invalid ~ .invalid-feedback,
+.needs-validation .form-control.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Custom feedback display for password mismatch */
+#passwordMismatch {
+    color: red; /* Make sure it's red */
+    display: none; /* Hide by default */
+}
+/* Show passwordMismatch only when confirm field is specifically marked as invalid */
+#confirmPassword.is-invalid ~ #passwordMismatch {
+    display: block;
+}
+/* Hide default 'confirm password' feedback when mismatch is shown */
+#confirmPassword.is-invalid ~ #confirmPasswordFeedback {
+    display: none;
+}
+
+
